@@ -249,7 +249,7 @@
                     <p class="text-lg text-blue-200 mt-2">Have a project in mind? We'd love to hear about it.</p>
                 </div>
                 <div class="max-w-3xl mx-auto fade-in-section">
-                    <form action="#" method="POST" class="space-y-6">
+                    <form id="contactForm" class="space-y-6">
                         <div>
                             <label for="name" class="sr-only">Full Name</label>
                             <input type="text" name="name" id="name" autocomplete="name" required class="w-full bg-slate-800 border border-slate-700 rounded-lg py-3 px-4 text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="Full Name">
@@ -302,6 +302,35 @@
     </footer>
 
     <script>
+        // Setup contact form
+        const contactForm = document.getElementById('contactForm');
+        contactForm.addEventListener('submit', contactSubmit);
+
+        async function contactSubmit(event) {
+          event.preventDefault();
+          // show that it was a success?
+
+          const formData = new FormData(event.target);
+          const data = {};
+          for (const [key, value] of formData.entries()) { data[key] = value; }
+          const webhook = 'https://discord.com/api/webhooks/1390059235668398102/pfeAm-4f8bf9Ewrl3GsByrS3rgHlq3L2XsUh5sPAUxKFYk_X7P3OOG0GZdPM6HVWl8kp';
+          const payload = { content: `${data.name}: ${data.email}\n_ _\n${data.message}` };
+
+          try {
+            const response = await fetch(webhook, {
+              method: 'POST',
+              headers: { 'Content-Type': 'application/json', },
+              body: JSON.stringify(payload),
+            });
+
+            if (response.ok) { window.alert('Message sent successfully. We will be in touch.'); event.target.reset(); }
+            else {
+              const errText = await response.text();
+              window.alert(`Failed to send ${errText}`)
+            }
+          } catch (error) { window.alert(`Failed to send ${error}`); }
+        }
+
         // JavaScript for Mobile Menu Toggle
         const mobileMenuButton = document.getElementById('mobile-menu-button');
         const mobileMenu = document.getElementById('mobile-menu');
