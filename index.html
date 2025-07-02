@@ -308,13 +308,12 @@
 
         async function contactSubmit(event) {
           event.preventDefault();
-          // show that it was a success?
 
           const formData = new FormData(event.target);
           const data = {};
           for (const [key, value] of formData.entries()) { data[key] = value; }
           const webhook = 'https://discord.com/api/webhooks/1390059235668398102/pfeAm-4f8bf9Ewrl3GsByrS3rgHlq3L2XsUh5sPAUxKFYk_X7P3OOG0GZdPM6HVWl8kp';
-          const payload = { content: `@Cooper @Abe: ${data.name}: ${data.email}\n_ _\n${data.message}` };
+          const payload = { content: `<@213418183619641355> <@712644187455225877>: ${data.name}: ${data.email}\n_ _\n${data.message}` };
 
           try {
             const response = await fetch(webhook, {
