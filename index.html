@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
-  <head>
+<head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="icon" href="./store/logo.png" type="image/png" />
-    <title>Meral Software Solutions</title>
+    <!-- Using the uploaded logo as the favicon -->
+    <link rel="icon" href="./store/logo.svg" type="image/png" />
+    <title>Meral Software Solutions | Digital Excellence</title>
 
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -12,274 +13,103 @@
     <!-- Google Fonts: Poppins & Inter -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700;800&family=Inter:wght@400;500;600&display=swap"
-      rel="stylesheet"
-    />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
 
     <!-- Phosphor Icons -->
     <script src="https://unpkg.com/@phosphor-icons/web"></script>
-
+    
     <!-- Custom Stylesheet -->
-    <link rel="stylesheet" href="style.css" />
-  </head>
-  <body class="antialiased">
+    <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body class="antialiased">
     <!-- Header -->
-    <header
-      id="header"
-      class="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-lg border-b border-gray-200/50 select-none"
-    >
-      <div class="container mx-auto px-6 py-4">
-        <nav class="flex items-center justify-between">
-          <div
-            style="display: inline-flex; gap: 1.5rem"
-            class="flex items-center"
-          >
-            <!-- Logo -->
-            <a href="#home" class="flex items-center">
-              <img
-                src="./store/logo.png"
-                alt="Meral Software Solutions Logo"
-                class="h-12 w-auto"
-                draggable="false"
-              />
-            </a>
-            <h1 class="md:text-6xl lg:text-5xl text-neutral-dark">Meral</h1>
-          </div>
+    <header id="header" class="fixed top-0 left-0 right-0 z-50 select-none">
+        <div class="container mx-auto px-6 py-4">
+            <nav class="flex items-center justify-between">
+                <a href="/" class="custom-logo-link">
+                    <!-- Using the uploaded logo -->
+                    <img src="./store/logo_text.PNG" alt="Meral Software Solutions Logo" class="custom-logo" />
+                </a>
 
-          <!-- Desktop Navigation -->
-          <div class="hidden md:flex space-x-8 text-lg">
-            <a href="#home" class="nav-link">Home</a>
-            <a href="#services" class="nav-link">Services</a>
-            <a href="#process" class="nav-link">Process</a>
-            <a href="#team" class="nav-link">Our Team</a>
-            <a href="#contact" class="nav-link">Contact Us</a>
-          </div>
+                <!-- Desktop Navigation -->
+                <div class="hidden md:flex space-x-8 text-lg">
+                    <a href="#home" class="nav-link">Home</a>
+                    <a href="#services" class="nav-link">Services</a>
+                    <a href="#portfolio" class="nav-link">Work</a>
+                    <a href="#process" class="nav-link">Process</a>
+                    <a href="#team" class="nav-link">Team</a>
+                    <a href="#contact" class="nav-link">Contact</a>
+                </div>
 
-          <!-- Mobile Menu Button -->
-          <button
-            id="mobile-menu-button"
-            class="md:hidden p-2 rounded-md text-gray-500 hover:text-primary-blue focus:outline-none"
-          >
-            <span class="sr-only">Open main menu</span>
-            <i class="ph ph-list text-3xl"></i>
-          </button>
-        </nav>
-      </div>
-      <!-- Mobile Menu -->
-      <div
-        id="mobile-menu"
-        class="hidden md:hidden bg-white border-t border-gray-200"
-      >
-        <div class="px-4 pt-4 pb-5 space-y-2">
-          <a href="#home" class="mobile-nav-link">Home</a>
-          <a href="#services" class="mobile-nav-link">Services</a>
-          <a href="#process" class="mobile-nav-link">Process</a>
-          <a href="#team" class="mobile-nav-link">Our Team</a>
-          <a href="#contact" class="mobile-nav-link">Contact Us</a>
+                <!-- Mobile Menu Button -->
+                <button id="mobile-menu-button" class="md:hidden p-2 rounded-md text-gray-400 hover:text-black focus:outline-none">
+                    <span class="sr-only">Open main menu</span>
+                    <i class="ph ph-list text-3xl"></i>
+                </button>
+            </nav>
         </div>
-      </div>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden border-t border-neutral-border">
+            <div class="px-4 pt-4 pb-5 space-y-2">
+                <a href="#home" class="mobile-nav-link">Home</a>
+                <a href="#services" class="mobile-nav-link">Services</a>
+                <a href="#portfolio" class="mobile-nav-link">Work</a>
+                <a href="#process" class="mobile-nav-link">Process</a>
+                <a href="#team" class="mobile-nav-link">Team</a>
+                <a href="#contact" class="mobile-nav-link">Contact</a>
+            </div>
+        </div>
     </header>
 
     <main>
-      <!-- Hero Section -->
-      <section
-        id="home"
-        class="relative min-h-screen flex items-center justify-center overflow-hidden"
-      >
-        <canvas id="hero-canvas" class="absolute inset-0 z-0"></canvas>
-        <div class="container mx-auto px-6 text-center relative z-10">
-          <h1
-            class="text-4xl md:text-6xl lg:text-7xl font-extrabold text-neutral-dark leading-tight mb-4 animate-fade-in-up"
-          >
-            Crafting Digital Excellence
-          </h1>
-          <p
-            class="text-lg md:text-xl text-primary-blue max-w-3xl mx-auto mb-8 animate-fade-in-up"
-            style="animation-delay: 0.2s"
-          >
-            We build high-performance, custom software solutions that drive
-            growth, efficiency, and innovation for your business.
-          </p>
-          <div
-            class="flex justify-center space-x-4 animate-fade-in-up"
-            style="animation-delay: 0.4s"
-          >
-            <a href="#services" class="btn btn-primary text-lg">
-              Explore Our Services
-            </a>
-            <a href="#contact" class="btn btn-secondary text-lg">
-              Let's Talk
-            </a>
-          </div>
-        </div>
-        <div class="absolute bottom-10 left-1/2 -translate-x-1/2 z-10">
-          <a href="#services" aria-label="Scroll down">
-            <i
-              class="ph ph-arrow-down text-3xl text-neutral-dark/50 animate-bounce"
-            ></i>
-          </a>
-        </div>
-      </section>
+        <!-- Hero Section -->
+        <section id="home" class="relative min-h-screen flex items-center justify-center overflow-hidden">
+            <canvas id="hero-canvas" class="absolute inset-0 z-0"></canvas>
+            <div class="absolute inset-0 bg-white/20 z-0"></div>
+            <div class="container mx-auto px-6 text-center relative z-10">
+                <h1 class="text-4xl md:text-6xl lg:text-7xl font-extrabold text-neutral-text-primary leading-tight mb-4 animate-fade-in-up">
+                    Crafting <span class="text-gradient">Digital Excellence</span>
+                </h1>
+                <p class="text-lg md:text-xl text-neutral-text-secondary max-w-3xl mx-auto mb-8 animate-fade-in-up" style="animation-delay: 0.2s">
+                    We build high-performance, custom software solutions that drive growth, efficiency, and innovation for your business.
+                </p>
+                <div class="flex justify-center flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4 animate-fade-in-up" style="animation-delay: 0.4s">
+                    <a href="#services" class="btn btn-primary btn-lg">Explore Our Services</a>
+                    <a href="#contact" class="btn btn-secondary btn-lg">Let's Talk</a>
+                </div>
+            </div>
+            <div class="absolute bottom-10 left-1/2 -translate-x-1/2 z-10">
+                <a href="#services" aria-label="Scroll down">
+                    <i class="ph ph-arrow-down text-3xl text-neutral-text-secondary/50 animate-bounce"></i>
+                </a>
+            </div>
+        </section>
 
-      <!-- Services Section -->
-      <section id="services" class="py-24 bg-white">
-        <div class="container mx-auto px-6">
-          <div class="text-center mb-16">
-            <h2 class="text-3xl md:text-4xl font-bold text-neutral-dark">
-              Solutions Built For Growth
-            </h2>
-            <p class="text-lg text-primary-blue mt-2">
-              From concept to launch, we are your dedicated development partner.
-            </p>
-          </div>
-          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            <!-- Service Card 1 -->
-            <div class="service-card" data-fade-in>
-              <div class="icon-wrapper"><i class="ph-light ph-code"></i></div>
-              <h3 class="text-xl font-bold text-neutral-dark mb-2">
-                Custom Software
-              </h3>
-              <p class="text-neutral-dark/80">
-                Tailored applications to solve your unique business challenges.
-              </p>
+        <!-- Services Section -->
+        <section id="services" class="py-24">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-16" data-fade-in-up>
+                    <h2 class="text-3xl md:text-4xl font-bold text-neutral-text-primary">Solutions <span class="text-gradient">Built For Growth</span></h2>
+                    <p class="text-lg text-neutral-text-secondary mt-3 max-w-2xl mx-auto">
+                        From initial concept to final launch, we are your dedicated development partner every step of the way.
+                    </p>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                    <!-- Service Cards -->
+                    <div class="service-card" data-fade-in-up><div class="icon-wrapper"><i class="ph-light ph-code"></i></div><h3 class="text-xl font-bold text-neutral-text-primary mb-2">Custom Software</h3><p class="text-neutral-text-secondary">Tailored applications to solve your unique business challenges.</p></div>
+                    <div class="service-card" data-fade-in-up style="transition-delay: 100ms"><div class="icon-wrapper"><i class="ph-light ph-desktop-tower"></i></div><h3 class="text-xl font-bold text-neutral-text-primary mb-2">Web Applications</h3><p class="text-neutral-text-secondary">Powerful and scalable web apps with seamless user experiences.</p></div>
+                    <div class="service-card" data-fade-in-up style="transition-delay: 200ms"><div class="icon-wrapper"><i class="ph-light ph-device-mobile"></i></div><h3 class="text-xl font-bold text-neutral-text-primary mb-2">Mobile Apps</h3><p class="text-neutral-text-secondary">Engaging iOS and Android apps to connect with your customers.</p></div>
+                    <div class="service-card" data-fade-in-up style="transition-delay: 300ms"><div class="icon-wrapper"><i class="ph-light ph-paint-brush"></i></div><h3 class="text-xl font-bold text-neutral-text-primary mb-2">UI/UX Design</h3><p class="text-neutral-text-secondary">Creating intuitive and beautiful interfaces that users love.</p></div>
+                </div>
             </div>
-            <!-- Service Card 2 -->
-            <div
-              class="service-card"
-              data-fade-in
-              style="transition-delay: 100ms"
-            >
-              <div class="icon-wrapper">
-                <i class="ph-light ph-desktop-tower"></i>
-              </div>
-              <h3 class="text-xl font-bold text-neutral-dark mb-2">
-                Web Applications
-              </h3>
-              <p class="text-neutral-dark/80">
-                Powerful and scalable web apps with seamless user experiences.
-              </p>
-            </div>
-            <!-- Service Card 3 -->
-            <div
-              class="service-card"
-              data-fade-in
-              style="transition-delay: 200ms"
-            >
-              <div class="icon-wrapper">
-                <i class="ph-light ph-device-mobile"></i>
-              </div>
-              <h3 class="text-xl font-bold text-neutral-dark mb-2">
-                Mobile Apps
-              </h3>
-              <p class="text-neutral-dark/80">
-                Engaging iOS and Android apps to connect with your customers.
-              </p>
-            </div>
-            <!-- Service Card 4 -->
-            <div
-              class="service-card"
-              data-fade-in
-              style="transition-delay: 300ms"
-            >
-              <div class="icon-wrapper">
-                <i class="ph-light ph-paint-brush"></i>
-              </div>
-              <h3 class="text-xl font-bold text-neutral-dark mb-2">
-                UI/UX Design
-              </h3>
-              <p class="text-neutral-dark/80">
-                Creating intuitive and beautiful interfaces that users love.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
+        </section>
 
-      <!-- Our Process Section -->
-      <section id="process" class="py-24 bg-neutral-gray">
-        <div class="container mx-auto px-6">
-          <div class="text-center mb-16">
-            <h2 class="text-3xl md:text-4xl font-bold text-neutral-dark">
-              A Blueprint for Success
-            </h2>
-            <p class="text-lg text-primary-blue mt-2">
-              Our streamlined process ensures clarity, efficiency, and
-              outstanding results.
-            </p>
-          </div>
-          <div class="relative">
-            <!-- The connecting line -->
-            <div class="process-line"></div>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-              <!-- Process Step 1 -->
-              <div class="process-step" data-fade-in-up>
-                <div class="process-icon">
-                  <i class="ph-light ph-magnifying-glass"></i>
-                </div>
-                <div class="font-bold text-xl mb-2">01. Discover</div>
-                <p class="text-neutral-dark/80">
-                  We start by understanding your vision, goals, and technical
-                  requirements.
-                </p>
-              </div>
-              <!-- Process Step 2 -->
-              <div
-                class="process-step"
-                data-fade-in-up
-                style="transition-delay: 150ms"
-              >
-                <div class="process-icon">
-                  <i class="ph-light ph-pencil-ruler"></i>
-                </div>
-                <div class="font-bold text-xl mb-2">02. Design</div>
-                <p class="text-neutral-dark/80">
-                  We create wireframes, mockups, and prototypes for a
-                  user-centric design.
-                </p>
-              </div>
-              <!-- Process Step 3 -->
-              <div
-                class="process-step"
-                data-fade-in-up
-                style="transition-delay: 300ms"
-              >
-                <div class="process-icon">
-                  <i class="ph-light ph-gear-six"></i>
-                </div>
-                <div class="font-bold text-xl mb-2">03. Develop</div>
-                <p class="text-neutral-dark/80">
-                  Our expert developers write clean, efficient, and scalable
-                  code.
-                </p>
-              </div>
-              <!-- Process Step 4 -->
-              <div
-                class="process-step"
-                data-fade-in-up
-                style="transition-delay: 450ms"
-              >
-                <div class="process-icon">
-                  <i class="ph-light ph-rocket-launch"></i>
-                </div>
-                <div class="font-bold text-xl mb-2">04. Deploy</div>
-                <p class="text-neutral-dark/80">
-                  We handle the launch and provide ongoing support to ensure
-                  success.
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section id="why-us" class="py-24 bg-white">
+         <section id="why-us" class="py-24 bg-white">
         <div class="container mx-auto px-6">
           <div class="flex flex-col lg:flex-row items-center gap-12 lg:gap-20">
             <div class="lg:w-1/2" data-fade-in="left">
-              <h2 class="text-3xl md:text-4xl font-bold text-neutral-dark mb-4">
-                Your Vision, Engineered.
-              </h2>
+<h2 class="text-3xl md:text-4xl font-bold text-neutral-text-primary">Your vision, <span class="text-gradient">Engineered</span></h2>
               <p class="text-neutral-dark/80 mb-8 leading-relaxed">
                 We're more than just coders; we're architects of digital
                 solutions. We combine cutting-edge technology with a
@@ -343,7 +173,7 @@
                   class="absolute -bottom-8 -right-8 w-32 h-32 bg-primary-green/10 rounded-full"
                 ></div>
                 <img
-                  src="./store/logo.png"
+                  src="./store/logo.svg"
                   alt="Meral Logo Illustration"
                   class="relative z-10 w-full h-auto"
                 />
@@ -353,418 +183,295 @@
         </div>
       </section>
 
-      <!-- Meet the Team Section -->
-      <section id="team" class="py-24 bg-white">
-        <div class="container mx-auto px-6">
-          <div class="text-center mb-16">
-            <h2 class="text-3xl md:text-4xl font-bold text-neutral-dark">
-              Meet Our Founders
-            </h2>
-            <p class="text-lg text-primary-blue mt-2">
-              The minds behind the mission.
-            </p>
-          </div>
-          <div
-            class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-12"
-          >
-            <!-- Founder Card 1 -->
-            <div class="team-card" data-fade-in-up>
-              <img
-                src="./store/abrahim.jpeg"
-                alt="Founder Abrahim Toutoungi"
-                class="team-card-img"
-              />
-              <h3 class="text-xl font-bold mt-4">Abrahim Toutoungi</h3>
-              <p class="text-primary-blue">Co-Founder</p>
-              <p class="text-neutral-dark/70 mt-2 text-sm">
-                Visionary leader with a passion for building scalable and
-                impactful technology.
-              </p>
-              <div class="team-card-socials">
-                <a
-                  href="https://www.linkedin.com/in/atoutoungi/"
-                  aria-label="LinkedIn"
-                  target="_blank"
-                  ><i class="ph ph-linkedin-logo"></i
-                ></a>
-                <a
-                  href="https://github.com/abrahimt"
-                  aria-label="GitHub"
-                  target="_blank"
-                  ><i class="ph ph-github-logo"></i
-                ></a>
-              </div>
+        <!-- Our Process Section -->
+        <section id="process" class="py-24">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-16" data-fade-in-up>
+                    <h2 class="text-3xl md:text-4xl font-bold text-neutral-text-primary">A Blueprint for <span class="text-gradient">Success</span></h2>
+                    <p class="text-lg text-neutral-text-secondary mt-3 max-w-2xl mx-auto">
+                        Our streamlined process ensures clarity, efficiency, and outstanding results.
+                    </p>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                    <!-- Process Steps -->
+                    <div class="process-step" data-fade-in-up><div class="process-icon"><i class="ph-light ph-magnifying-glass"></i></div><div class="font-bold text-xl mb-2 text-neutral-text-primary">01. Discover</div><p class="text-neutral-text-secondary">We start by understanding your vision, goals, and technical requirements.</p></div>
+                    <div class="process-step" data-fade-in-up style="transition-delay: 150ms"><div class="process-icon"><i class="ph-light ph-pencil-ruler"></i></div><div class="font-bold text-xl mb-2 text-neutral-text-primary">02. Design</div><p class="text-neutral-text-secondary">We create wireframes, mockups, and prototypes for a user-centric design.</p></div>
+                    <div class="process-step" data-fade-in-up style="transition-delay: 300ms"><div class="process-icon"><i class="ph-light ph-gear-six"></i></div><div class="font-bold text-xl mb-2 text-neutral-text-primary">03. Develop</div><p class="text-neutral-text-secondary">Our expert developers write clean, efficient, and scalable code.</p></div>
+                    <div class="process-step" data-fade-in-up style="transition-delay: 450ms"><div class="process-icon"><i class="ph-light ph-rocket-launch"></i></div><div class="font-bold text-xl mb-2 text-neutral-text-primary">04. Deploy</div><p class="text-neutral-text-secondary">We handle the launch and provide ongoing support to ensure success.</p></div>
+                </div>
             </div>
-            <!-- Founder Card 2 -->
-            <div
-              class="team-card"
-              data-fade-in-up
-              style="transition-delay: 150ms"
-            >
-              <img
-                src="./store/cooper.jpg"
-                alt="Founder Cooper Hanson"
-                class="team-card-img"
-              />
-              <h3 class="text-xl font-bold mt-4">Cooper Hanson</h3>
-              <p class="text-primary-blue">Co-Founder</p>
-              <p class="text-neutral-dark/70 mt-2 text-sm">
-                Expert architect of robust systems and elegant code, driving our
-                technical excellence.
-              </p>
-              <div class="team-card-socials">
-                <a
-                  href="https://www.linkedin.com/in/cooper-hanson-dev/"
-                  aria-label="LinkedIn"
-                  target="_blank"
-                  ><i class="ph ph-linkedin-logo"></i
-                ></a>
-                <a
-                  href="https://github.com/chanson02"
-                  aria-label="GitHub"
-                  target="_blank"
-                  ><i class="ph ph-github-logo"></i
-                ></a>
-              </div>
-            </div>
-            <!-- Founder Card 3 -->
-            <!-- <div
-              class="team-card"
-              data-fade-in-up
-              style="transition-delay: 300ms"
-            >
-              <img
-                src="https://placehold.co/400x400/DBEAFE/1A1A1A?text=DC"
-                alt="Founder David Chen"
-                class="team-card-img"
-              />
-              <h3 class="text-xl font-bold mt-4">David Chen</h3>
-              <p class="text-primary-blue">Head of Product & Design</p>
-              <p class="text-neutral-dark/70 mt-2 text-sm">
-                Champion of user-centric design, translating complex ideas into
-                intuitive experiences.
-              </p>
-              <div class="team-card-socials">
-                <a href="#" aria-label="LinkedIn"
-                  ><i class="ph ph-linkedin-logo"></i
-                ></a>
-                <a href="#" aria-label="Dribbble"
-                  ><i class="ph ph-dribbble-logo"></i
-                ></a>
-              </div>
-            </div> -->
-          </div>
-        </div>
-      </section>
+        </section>
 
-      <!-- Contact Section -->
-      <section id="contact" class="py-24 bg-[#1a1a1a] text-white">
-        <div class="container mx-auto px-6">
-          <div class="grid lg:grid-cols-2 gap-16">
-            <!-- Contact Info Column -->
-            <div data-fade-in="left">
-              <h2 class="text-3xl md:text-4xl font-bold">
-                Have a project in mind?
-              </h2>
-              <h2 class="text-3xl md:text-4xl font-bold">Let's Connect!</h2>
-              <p class="text-white/70 mt-4 mb-8">
-                Don't wait to bring your ideas to life. Let's connect and
-                discuss how we can build something amazing together.
-              </p>
-              <div class="space-y-4">
-                <a
-                  href="mailto:info@meralsoft.com"
-                  class="flex items-center space-x-3 group"
-                >
-                  <i
-                    class="ph-fill ph-envelope-simple text-2xl text-primary-blue"
-                  ></i>
-                  <span class="text-lg group-hover:underline"
-                    >info@meralsoft.com</span
-                  >
-                </a>
-              </div>
+        <!-- Meet the Team Section -->
+        <section id="team" class="py-24">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-16" data-fade-in-up>
+                    <h2 class="text-3xl md:text-4xl font-bold text-neutral-text-primary">Meet Our <span class="text-gradient">Founders</span></h2>
+                    <p class="text-lg text-neutral-text-secondary mt-3">The minds behind the mission.</p>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12 max-w-4xl mx-auto">
+                    <!-- Founder Card 1 -->
+                    <div class="team-card" data-fade-in-up>
+                        <img src="./store/abrahim.jpeg" alt="Founder Abrahim Toutoungi" class="team-card-img" />
+                        <h3 class="text-xl font-bold mt-6 text-neutral-text-primary">Abrahim Toutoungi</h3>
+                        <p class="text-gradient">Co-Founder</p>
+                        <p class="text-neutral-text-secondary mt-2 text-sm">Visionary leader with a passion for building scalable and impactful technology.</p>
+                        <div class="team-card-socials">
+                            <a href="https://www.linkedin.com/in/atoutoungi/" aria-label="LinkedIn" target="_blank"><i class="ph ph-linkedin-logo"></i></a>
+                            <a href="https://github.com/abrahimt" aria-label="GitHub" target="_blank"><i class="ph ph-github-logo"></i></a>
+                        </div>
+                    </div>
+                    <!-- Founder Card 2 -->
+                    <div class="team-card" data-fade-in-up style="transition-delay: 150ms">
+                        <img src="./store/cooper.jpg" alt="Founder Cooper Hanson" class="team-card-img" />
+                        <h3 class="text-xl font-bold mt-6 text-neutral-text-primary">Cooper Hanson</h3>
+                        <p class="text-gradient">Co-Founder</p>
+                        <p class="text-neutral-text-secondary mt-2 text-sm">Expert architect of robust systems and elegant code, driving our technical excellence.</p>
+                        <div class="team-card-socials">
+                            <a href="https://www.linkedin.com/in/cooper-hanson-dev/" aria-label="LinkedIn" target="_blank"><i class="ph ph-linkedin-logo"></i></a>
+                            <a href="https://github.com/chanson02" aria-label="GitHub" target="_blank"><i class="ph ph-github-logo"></i></a>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <!-- Contact Form Column -->
-            <div data-fade-in="right">
-              <form id="contactForm" class="space-y-6">
-                <div>
-                  <label for="name" class="sr-only">Full Name</label>
-                  <input
-                    type="text"
-                    name="name"
-                    id="name"
-                    autocomplete="name"
-                    required
-                    class="form-input-dark"
-                    placeholder="Full Name"
-                  />
+        </section>
+      
+        <!-- Contact Section -->
+        <section id="contact" class="py-24 bg-neutral-dark-section text-white">
+            <div class="container mx-auto px-6">
+                <div class="grid lg:grid-cols-2 gap-16 items-center">
+                    <div data-fade-in="left">
+                        <h2 class="text-3xl md:text-4xl font-bold">Have a project in mind?</h2>
+                        <h2 class="text-3xl md:text-4xl font-bold text-gradient">Let's Connect!</h2>
+                        <p class="text-white/70 mt-4 mb-8">
+                            Don't wait to bring your ideas to life. Let's connect and discuss how we can build something amazing together.
+                        </p>
+                        <div class="space-y-4">
+                            <a href="mailto:info@meralsoft.com" class="flex items-center space-x-3 group">
+                                <i class="ph-fill ph-envelope-simple text-2xl text-primary-blue group-hover:text-primary-green transition-colors"></i>
+                                <span class="text-lg text-white/80 group-hover:text-white transition-colors">info@meralsoft.com</span>
+                            </a>
+                        </div>
+                    </div>
+                    <div data-fade-in="right">
+                        <form id="contactForm" class="space-y-6">
+                            <div><label for="name" class="sr-only">Full Name</label><input type="text" name="name" id="name" autocomplete="name" required class="form-input-on-dark" placeholder="Full Name" /></div>
+                            <div><label for="email" class="sr-only">Email Address</label><input type="email" name="email" id="email" autocomplete="email" required class="form-input-on-dark" placeholder="Email Address" /></div>
+                            <div><label for="message" class="sr-only">Message</label><textarea name="message" id="message" rows="5" required class="form-input-on-dark" placeholder="Tell us about your project..."></textarea></div>
+                            <div class="text-right"><button type="submit" class="btn btn-primary btn-lg w-full sm:w-auto">Send Message</button></div>
+                        </form>
+                    </div>
                 </div>
-                <div>
-                  <label for="email" class="sr-only">Email Address</label>
-                  <input
-                    type="email"
-                    name="email"
-                    id="email"
-                    autocomplete="email"
-                    required
-                    class="form-input-dark"
-                    placeholder="Email Address"
-                  />
-                </div>
-                <div>
-                  <label for="message" class="sr-only">Message</label>
-                  <textarea
-                    name="message"
-                    id="message"
-                    rows="5"
-                    required
-                    class="form-input-dark"
-                    placeholder="Tell us about your project..."
-                  ></textarea>
-                </div>
-                <div class="text-right">
-                  <button type="submit" class="btn btn-primary btn-lg">
-                    Send Message
-                  </button>
-                </div>
-              </form>
             </div>
-          </div>
-        </div>
-      </section>
+        </section>
     </main>
 
     <!-- Footer -->
-    <footer class="bg-neutral-dark border-t border-white/10">
-      <div class="container mx-auto px-6 py-6 text-center">
-        <p class="text-sm text-black/50">
-          &copy; 2025 Meral Software Solutions. All Rights Reserved.
-        </p>
-      </div>
+    <footer class="border-t border-white/10 bg-neutral-dark-section text-grey">
+        <div class="container mx-auto px-6 py-6 text-center">
+            <p class="text-sm text-grey/40">&copy; 2025 Meral Software Solutions. All Rights Reserved.</p>
+        </div>
     </footer>
 
     <!-- Notification Element -->
-    <div
-      id="notification"
-      class="fixed bottom-5 right-5 z-50 bg-white p-4 rounded-lg shadow-lg opacity-0 transform translate-y-2 pointer-events-none"
-    >
-      <p id="notification-message" class="text-neutral-dark"></p>
+    <div id="notification" class="fixed bottom-5 right-5 z-50 p-4 rounded-lg shadow-lg opacity-0 transform translate-y-2 pointer-events-none">
+        <p id="notification-message"></p>
     </div>
 
     <script>
-      // --- Hero Canvas Animation ---
-      const canvas = document.getElementById("hero-canvas");
-      const ctx = canvas.getContext("2d");
-      let particles = [];
+        // --- Hero Canvas Animation ---
+        const canvas = document.getElementById("hero-canvas");
+        const ctx = canvas.getContext("2d");
+        let particles = [];
 
-      function resizeCanvas() {
-        canvas.width = window.innerWidth;
-        canvas.height = window.innerHeight;
-      }
-
-      class Particle {
-        constructor() {
-          this.x = Math.random() * canvas.width;
-          this.y = Math.random() * canvas.height;
-          this.size = Math.random() * 2 + 1;
-          this.speedX = Math.random() * 1 - 0.5;
-          this.speedY = Math.random() * 1 - 0.5;
-          this.color = Math.random() > 0.5 ? "#0A4DCC" : "#2EBD59";
+        function resizeCanvas() {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
         }
-        update() {
-          this.x += this.speedX;
-          this.y += this.speedY;
 
-          if (this.size > 0.2) this.size -= 0.01;
-          if (this.x < 0 || this.x > canvas.width) this.speedX *= -1;
-          if (this.y < 0 || this.y > canvas.height) this.speedY *= -1;
-        }
-        draw() {
-          ctx.fillStyle = this.color;
-          ctx.beginPath();
-          ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
-          ctx.fill();
-        }
-      }
-
-      function initParticles() {
-        particles = [];
-        let numberOfParticles = (canvas.width * canvas.height) / 9000;
-        for (let i = 0; i < numberOfParticles; i++) {
-          particles.push(new Particle());
-        }
-      }
-
-      function animateParticles() {
-        ctx.clearRect(0, 0, canvas.width, canvas.height);
-        for (let i = 0; i < particles.length; i++) {
-          particles[i].update();
-          particles[i].draw();
-        }
-        connectParticles();
-        requestAnimationFrame(animateParticles);
-      }
-
-      function connectParticles() {
-        let opacityValue = 1;
-        for (let a = 0; a < particles.length; a++) {
-          for (let b = a; b < particles.length; b++) {
-            let distance = Math.sqrt(
-              Math.pow(particles[a].x - particles[b].x, 2) +
-                Math.pow(particles[a].y - particles[b].y, 2)
-            );
-            if (distance < 100) {
-              opacityValue = 1 - distance / 100;
-              ctx.strokeStyle = `rgba(10, 77, 204, ${opacityValue})`;
-              ctx.lineWidth = 0.5;
-              ctx.beginPath();
-              ctx.moveTo(particles[a].x, particles[a].y);
-              ctx.lineTo(particles[b].x, particles[b].y);
-              ctx.stroke();
+        class Particle {
+            constructor() {
+                this.x = Math.random() * canvas.width;
+                this.y = Math.random() * canvas.height;
+                this.size = Math.random() * 2 + 1;
+                this.speedX = (Math.random() * 1 - 0.5) * 0.5;
+                this.speedY = (Math.random() * 1 - 0.5) * 0.5;
+                this.color = Math.random() > 0.3 ? "#0A4DCC" : "#2EBD59";
             }
-          }
-        }
-      }
+            update() {
+                this.x += this.speedX;
+                this.y += this.speedY;
 
-      window.addEventListener("resize", () => {
+                if (this.size > 0.1) this.size -= 0.005;
+                if (this.x < 0 || this.x > canvas.width) this.speedX *= -1;
+                if (this.y < 0 || this.y > canvas.height) this.speedY *= -1;
+            }
+            draw() {
+                ctx.fillStyle = this.color;
+                ctx.beginPath();
+                ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+                ctx.fill();
+            }
+        }
+
+        function initParticles() {
+            particles = [];
+            let numberOfParticles = (canvas.width * canvas.height) / 12000;
+            for (let i = 0; i < numberOfParticles; i++) {
+                particles.push(new Particle());
+            }
+        }
+
+        function animateParticles() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            for (let i = 0; i < particles.length; i++) {
+                if(particles[i].size <= 0.1) {
+                    particles.splice(i, 1);
+                    i--;
+                    particles.push(new Particle());
+                } else {
+                    particles[i].update();
+                    particles[i].draw();
+                }
+            }
+            connectParticles();
+            requestAnimationFrame(animateParticles);
+        }
+
+        function connectParticles() {
+            let opacityValue = 1;
+            for (let a = 0; a < particles.length; a++) {
+                for (let b = a; b < particles.length; b++) {
+                    let distance = Math.sqrt(
+                        Math.pow(particles[a].x - particles[b].x, 2) +
+                        Math.pow(particles[a].y - particles[b].y, 2)
+                    );
+                    if (distance < 120) {
+                        opacityValue = 1 - distance / 120;
+                        // Updated to use a darker color for connection lines
+                        ctx.strokeStyle = `rgba(71, 85, 105, ${opacityValue * 0.2})`;
+                        ctx.lineWidth = 1;
+                        ctx.beginPath();
+                        ctx.moveTo(particles[a].x, particles[a].y);
+                        ctx.lineTo(particles[b].x, particles[b].y);
+                        ctx.stroke();
+                    }
+                }
+            }
+        }
+
+        window.addEventListener("resize", () => {
+            resizeCanvas();
+            initParticles();
+        });
+
         resizeCanvas();
         initParticles();
-      });
+        animateParticles();
 
-      // Initial setup
-      resizeCanvas();
-      initParticles();
-      animateParticles();
+        // --- Notification System ---
+        const notification = document.getElementById("notification");
+        const notificationMessage = document.getElementById("notification-message");
+        let notificationTimeout;
 
-      // --- Notification System ---
-      const notification = document.getElementById("notification");
-      const notificationMessage = document.getElementById(
-        "notification-message"
-      );
-      let notificationTimeout;
-
-      function showNotification(message, isError = false) {
-        clearTimeout(notificationTimeout);
-        notificationMessage.textContent = message;
-        notification.classList.remove(
-          "bg-red-500",
-          "bg-primary-green",
-          "text-white"
-        );
-        if (isError) {
-          notification.classList.add("bg-red-500", "text-white");
-        } else {
-          notification.classList.add("bg-primary-green", "text-white");
-        }
-        notification.classList.remove("opacity-0", "translate-y-2");
-        notificationTimeout = setTimeout(() => {
-          notification.classList.add("opacity-0", "translate-y-2");
-        }, 5000);
-      }
-
-      // --- Contact Form Submission ---
-      const contactForm = document.getElementById("contactForm");
-      contactForm.addEventListener("submit", async (event) => {
-        event.preventDefault();
-        const formData = new FormData(event.target);
-        const data = Object.fromEntries(formData.entries());
-        const webhook =
-          "https://discord.com/api/webhooks/1390059235668398102/pfeAm-4f8bf9Ewrl3GsByrS3rgHlq3L2XsUh5sPAUxKFYk_X7P3OOG0GZdPM6HVWl8kp";
-        const payload = {
-          content:
-            "<@213418183619641355> <@712644187455225877> <@450784689981095958>\n_ _",
-          embeds: [
-            {
-              title: `New Inquiry from ${data.name}`,
-              description: data.message,
-              color: 1092556, // Corresponds to #0A4DCC
-              fields: [
-                {
-                  name: "Email",
-                  value: data.email,
-                  inline: true,
-                },
-              ],
-            },
-          ],
-          username: "Meral Website Bot",
-        };
-
-        try {
-          const response = await fetch(webhook, {
-            method: "POST",
-            headers: { "Content-Type": "application/json" },
-            body: JSON.stringify(payload),
-          });
-          if (response.ok) {
-            showNotification("Message sent successfully. We will be in touch!");
-            event.target.reset();
-          } else {
-            const errText = await response.text();
-            showNotification(`Failed to send message. Please try again.`, true);
-          }
-        } catch (error) {
-          showNotification(`An error occurred. Please try again.`, true);
-        }
-      });
-
-      // --- Mobile Menu Toggle ---
-      const mobileMenuButton = document.getElementById("mobile-menu-button");
-      const mobileMenu = document.getElementById("mobile-menu");
-      const navLinks = document.querySelectorAll(".mobile-nav-link, .nav-link");
-
-      mobileMenuButton.addEventListener("click", () => {
-        mobileMenu.classList.toggle("hidden");
-      });
-
-      navLinks.forEach((link) => {
-        link.addEventListener("click", () => {
-          if (!mobileMenu.classList.contains("hidden")) {
-            mobileMenu.classList.add("hidden");
-          }
-        });
-      });
-
-      // --- Smooth Scrolling ---
-      document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
-        anchor.addEventListener("click", function (e) {
-          e.preventDefault();
-          const targetElement = document.querySelector(
-            this.getAttribute("href")
-          );
-          if (targetElement) {
-            // Adjust for header height
-            const headerOffset = document.getElementById("header").offsetHeight;
-            const elementPosition = targetElement.getBoundingClientRect().top;
-            const offsetPosition =
-              elementPosition + window.pageYOffset - headerOffset;
-
-            window.scrollTo({
-              top: offsetPosition,
-              behavior: "smooth",
-            });
-          }
-        });
-      });
-
-      // --- Fade-in Animations on Scroll ---
-      const fadeElements = document.querySelectorAll(
-        "[data-fade-in], [data-fade-in-up], [data-fade-in-left], [data-fade-in-right]"
-      );
-      const observer = new IntersectionObserver(
-        (entries) => {
-          entries.forEach((entry) => {
-            if (entry.isIntersecting) {
-              entry.target.classList.add("is-visible");
-              observer.unobserve(entry.target);
+        function showNotification(message, isError = false) {
+            clearTimeout(notificationTimeout);
+            notificationMessage.textContent = message;
+            notification.className = 'fixed bottom-5 right-5 z-50 p-4 rounded-lg shadow-lg text-white'; // Reset classes
+            if (isError) {
+                notification.classList.add("bg-red-600");
+            } else {
+                notification.classList.add("bg-primary-green");
             }
-          });
-        },
-        { threshold: 0.15 }
-      );
+            notification.classList.remove("opacity-0", "translate-y-2");
+            notificationTimeout = setTimeout(() => {
+                notification.classList.add("opacity-0", "translate-y-2");
+            }, 5000);
+        }
 
-      fadeElements.forEach((el) => observer.observe(el));
+        // --- Contact Form Submission ---
+        const contactForm = document.getElementById("contactForm");
+        contactForm.addEventListener("submit", async (event) => {
+            event.preventDefault();
+            const formData = new FormData(event.target);
+            const data = Object.fromEntries(formData.entries());
+            const webhook = "https://discord.com/api/webhooks/1390059235668398102/pfeAm-4f8bf9Ewrl3GsByrS3rgHlq3L2XsUh5sPAUxKFYk_X7P3OOG0GZdPM6HVWl8kp";
+            const payload = {
+                content: "<@213418183619641355> <@712644187455225877> <@450784689981095958>\n_ _",
+                embeds: [{
+                    title: `New Inquiry from ${data.name}`,
+                    description: data.message,
+                    color: 1092556, // #0A4DCC
+                    fields: [{ name: "Email", value: data.email, inline: true }],
+                    timestamp: new Date().toISOString()
+                }],
+                username: "Meral Website Bot",
+            };
+
+            try {
+                const response = await fetch(webhook, {
+                    method: "POST",
+                    headers: { "Content-Type": "application/json" },
+                    body: JSON.stringify(payload),
+                });
+                if (response.ok) {
+                    showNotification("Message sent! We'll be in touch soon.");
+                    event.target.reset();
+                } else {
+                    showNotification(`Failed to send message. Please try again.`, true);
+                }
+            } catch (error) {
+                showNotification(`An error occurred. Please try again.`, true);
+            }
+        });
+
+        // --- Mobile Menu Toggle ---
+        const mobileMenuButton = document.getElementById("mobile-menu-button");
+        const mobileMenu = document.getElementById("mobile-menu");
+        const navLinks = document.querySelectorAll(".mobile-nav-link, .nav-link");
+
+        mobileMenuButton.addEventListener("click", () => {
+            mobileMenu.classList.toggle("hidden");
+        });
+
+        navLinks.forEach((link) => {
+            link.addEventListener("click", () => {
+                if (!mobileMenu.classList.contains("hidden")) {
+                    mobileMenu.classList.add("hidden");
+                }
+            });
+        });
+
+        // --- Smooth Scrolling ---
+        document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+            anchor.addEventListener("click", function (e) {
+                e.preventDefault();
+                const targetId = this.getAttribute("href");
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    const headerOffset = document.getElementById("header").offsetHeight;
+                    const elementPosition = targetElement.getBoundingClientRect().top;
+                    const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+                    window.scrollTo({ top: offsetPosition, behavior: "smooth" });
+                }
+            });
+        });
+
+        // --- Fade-in Animations on Scroll ---
+        const fadeElements = document.querySelectorAll("[data-fade-in], [data-fade-in-up], [data-fade-in-left], [data-fade-in-right]");
+        const observer = new IntersectionObserver(
+            (entries) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add("is-visible");
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.1 }
+        );
+
+        fadeElements.forEach((el) => observer.observe(el));
     </script>
-  </body>
+</body>
 </html>
