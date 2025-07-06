@@ -3,64 +3,25 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="./store/logo.png" type="image/png" />
     <title>Meral Software Solutions</title>
 
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
 
-    <!-- Google Fonts: Inter -->
+    <!-- Google Fonts: Poppins & Inter -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link rel="icon" href="store/logo.png" type="image/x-icon" />
     <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700;800&family=Inter:wght@400;500;600&display=swap"
       rel="stylesheet"
     />
 
-    <!-- Custom Styles & Animations -->
-    <style>
-      body {
-        font-family: "Inter", sans-serif;
-        background-color: #f9fafb; /* Light gray background */
-        color: #1f2937; /* Dark gray text */
-      }
+    <!-- Phosphor Icons -->
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
 
-      /* Animated gradient background for the hero section */
-      .animated-gradient {
-        background: linear-gradient(-45deg, #f3f4f6, #e0e7ff, #dbeafe, #f9fafb);
-        background-size: 400% 400%;
-        animation: gradientBG 20s ease infinite;
-      }
-
-      @keyframes gradientBG {
-        0% {
-          background-position: 0% 50%;
-        }
-        50% {
-          background-position: 100% 50%;
-        }
-        100% {
-          background-position: 0% 50%;
-        }
-      }
-
-      /* Scroll-triggered fade-in animation */
-      .fade-in-section {
-        opacity: 0;
-        transform: translateY(20px);
-        transition: opacity 0.6s ease-out, transform 0.6s ease-out;
-      }
-
-      .fade-in-section.is-visible {
-        opacity: 1;
-        transform: translateY(0);
-      }
-
-      /* Custom notification styles */
-      #notification {
-        transition: opacity 0.5s, transform 0.5s;
-      }
-    </style>
+    <!-- Custom Stylesheet -->
+    <link rel="stylesheet" href="style.css" />
   </head>
   <body class="antialiased">
     <!-- Header -->
@@ -68,152 +29,54 @@
       id="header"
       class="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-lg border-b border-gray-200/50 select-none"
     >
-      <div class="container mx-auto px-6 py-3 select-none">
-        <nav class="flex items-center justify-between select-none">
-          <!-- Logo -->
-          <a href="#" class="flex items-center space-x-2 select-none">
-            <img
-              src="store/Name.PNG"
-              alt="Meral Software Solutions Logo"
-              class="h-12 w-auto select-none"
-              draggable="false"
-            />
-            <img
-              src="store/logo.png"
-              alt="Meral Software Solutions Logo"
-              class="h-12 w-auto select-none"
-              draggable="false"
-            />
-          </a>
-
-          <!-- Desktop Navigation -->
-          <div class="hidden md:flex items-center space-x-8 select-none">
-            <a
-              href="#home"
-              class="text-gray-600 hover:text-blue-600 transition-colors duration-300 select-none"
-              tabIndex="-1"
-              onmousedown="return false;"
-              onselectstart="return false;"
-              >Home</a
-            >
-            <a
-              href="#services"
-              class="text-gray-600 hover:text-blue-600 transition-colors duration-300 select-none"
-              tabIndex="-1"
-              onmousedown="return false;"
-              onselectstart="return false;"
-              >Services</a
-            >
-            <a
-              href="#about"
-              class="text-gray-600 hover:text-blue-600 transition-colors duration-300 select-none"
-              tabIndex="-1"
-              onmousedown="return false;"
-              onselectstart="return false;"
-              >About Us</a
-            >
-            <a
-              href="#portfolio"
-              class="text-gray-600 hover:text-blue-600 transition-colors duration-300 select-none"
-              tabIndex="-1"
-              onmousedown="return false;"
-              onselectstart="return false;"
-              >Our Work</a
-            >
-            <a
-              href="#contact"
-              class="text-gray-600 hover:text-blue-600 transition-colors duration-300 select-none"
-              tabIndex="-1"
-              onmousedown="return false;"
-              onselectstart="return false;"
-              >Contact</a
-            >
+      <div class="container mx-auto px-6 py-4">
+        <nav class="flex items-center justify-between">
+          <div
+            style="display: inline-flex; gap: 1.5rem"
+            class="flex items-center"
+          >
+            <!-- Logo -->
+            <a href="#home" class="flex items-center">
+              <img
+                src="./store/logo.png"
+                alt="Meral Software Solutions Logo"
+                class="h-12 w-auto"
+                draggable="false"
+              />
+            </a>
+            <h1 class="md:text-6xl lg:text-5xl text-neutral-dark">Meral</h1>
           </div>
 
-          <a
-            href="#contact"
-            class="hidden md:inline-block bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 px-5 rounded-lg shadow-lg transition-transform transform hover:scale-105 duration-300 select-none"
-            tabIndex="-1"
-            onmousedown="return false;"
-            onselectstart="return false;"
-          >
-            Get a Quote
-          </a>
+          <!-- Desktop Navigation -->
+          <div class="hidden md:flex space-x-8 text-lg">
+            <a href="#home" class="nav-link">Home</a>
+            <a href="#services" class="nav-link">Services</a>
+            <a href="#process" class="nav-link">Process</a>
+            <a href="#team" class="nav-link">Our Team</a>
+            <a href="#contact" class="nav-link">Contact Us</a>
+          </div>
 
           <!-- Mobile Menu Button -->
           <button
             id="mobile-menu-button"
-            class="md:hidden p-2 rounded-md text-gray-500 hover:text-gray-800 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-blue-500 select-none"
-            tabIndex="-1"
-            onmousedown="return false;"
-            onselectstart="return false;"
+            class="md:hidden p-2 rounded-md text-gray-500 hover:text-primary-blue focus:outline-none"
           >
             <span class="sr-only">Open main menu</span>
-            <svg
-              class="h-6 w-6 select-none"
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-              aria-hidden="true"
-              draggable="false"
-            >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-                d="M4 6h16M4 12h16m-7 6h7"
-              />
-            </svg>
+            <i class="ph ph-list text-3xl"></i>
           </button>
         </nav>
       </div>
       <!-- Mobile Menu -->
       <div
         id="mobile-menu"
-        class="hidden md:hidden bg-white border-t border-gray-200 select-none"
+        class="hidden md:hidden bg-white border-t border-gray-200"
       >
-        <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3 select-none">
-          <a
-            href="#home"
-            class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-blue-600 hover:bg-gray-50 select-none"
-            tabIndex="-1"
-            onmousedown="return false;"
-            onselectstart="return false;"
-            >Home</a
-          >
-          <a
-            href="#services"
-            class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-blue-600 hover:bg-gray-50 select-none"
-            tabIndex="-1"
-            onmousedown="return false;"
-            onselectstart="return false;"
-            >Services</a
-          >
-          <a
-            href="#about"
-            class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-blue-600 hover:bg-gray-50 select-none"
-            tabIndex="-1"
-            onmousedown="return false;"
-            onselectstart="return false;"
-            >About</a
-          >
-          <a
-            href="#portfolio"
-            class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-blue-600 hover:bg-gray-50 select-none"
-            tabIndex="-1"
-            onmousedown="return false;"
-            onselectstart="return false;"
-            >Our Work</a
-          >
-          <a
-            href="#contact"
-            class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-blue-600 hover:bg-gray-50 select-none"
-            tabIndex="-1"
-            onmousedown="return false;"
-            onselectstart="return false;"
-            >Contact</a
-          >
+        <div class="px-4 pt-4 pb-5 space-y-2">
+          <a href="#home" class="mobile-nav-link">Home</a>
+          <a href="#services" class="mobile-nav-link">Services</a>
+          <a href="#process" class="mobile-nav-link">Process</a>
+          <a href="#team" class="mobile-nav-link">Our Team</a>
+          <a href="#contact" class="mobile-nav-link">Contact Us</a>
         </div>
       </div>
     </header>
@@ -222,448 +85,572 @@
       <!-- Hero Section -->
       <section
         id="home"
-        class="relative min-h-screen flex items-center justify-center animated-gradient pt-24"
+        class="relative min-h-screen flex items-center justify-center overflow-hidden"
       >
-        <div class="container mx-auto px-6 text-center">
+        <canvas id="hero-canvas" class="absolute inset-0 z-0"></canvas>
+        <div class="container mx-auto px-6 text-center relative z-10">
           <h1
-            class="text-4xl md:text-6xl lg:text-7xl font-extrabold text-gray-900 leading-tight mb-4"
+            class="text-4xl md:text-6xl lg:text-7xl font-extrabold text-neutral-dark leading-tight mb-4 animate-fade-in-up"
           >
             Crafting Digital Excellence
           </h1>
-          <p class="text-lg md:text-xl text-blue-800 max-w-3xl mx-auto mb-8">
-            Meral Software Solutions delivers high-quality, custom software that
-            drives growth, efficiency, and innovation for your business.
+          <p
+            class="text-lg md:text-xl text-primary-blue max-w-3xl mx-auto mb-8 animate-fade-in-up"
+            style="animation-delay: 0.2s"
+          >
+            We build high-performance, custom software solutions that drive
+            growth, efficiency, and innovation for your business.
           </p>
-          <div class="flex justify-center space-x-4">
-            <a
-              href="#services"
-              class="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-8 rounded-lg shadow-lg transition-transform transform hover:scale-105 duration-300"
-            >
+          <div
+            class="flex justify-center space-x-4 animate-fade-in-up"
+            style="animation-delay: 0.4s"
+          >
+            <a href="#services" class="btn btn-primary text-lg">
               Explore Our Services
             </a>
-            <a
-              href="#portfolio"
-              class="bg-gray-200 hover:bg-gray-300 text-gray-800 font-semibold py-3 px-8 rounded-lg shadow-lg transition-transform transform hover:scale-105 duration-300"
-            >
-              View Our Work
+            <a href="#contact" class="btn btn-secondary text-lg">
+              Let's Talk
             </a>
           </div>
         </div>
-        <div class="absolute bottom-10 left-1/2 -translate-x-1/2">
+        <div class="absolute bottom-10 left-1/2 -translate-x-1/2 z-10">
           <a href="#services" aria-label="Scroll down">
-            <svg
-              class="w-8 h-8 text-gray-500 animate-bounce"
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke-width="1.5"
-              stroke="currentColor"
-            >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                d="m9 12.75 3 3m0 0 3-3m-3 3v-7.5M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"
-              />
-            </svg>
+            <i
+              class="ph ph-arrow-down text-3xl text-neutral-dark/50 animate-bounce"
+            ></i>
           </a>
         </div>
       </section>
 
       <!-- Services Section -->
-      <section id="services" class="py-20 bg-white">
+      <section id="services" class="py-24 bg-white">
         <div class="container mx-auto px-6">
-          <div class="text-center mb-12 fade-in-section">
-            <h2 class="text-3xl md:text-4xl font-bold text-gray-900">
-              Our Core Services
+          <div class="text-center mb-16">
+            <h2 class="text-3xl md:text-4xl font-bold text-neutral-dark">
+              Solutions Built For Growth
             </h2>
-            <p class="text-lg text-blue-800 mt-2">
-              We build solutions that power progress.
+            <p class="text-lg text-primary-blue mt-2">
+              From concept to launch, we are your dedicated development partner.
             </p>
           </div>
-          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             <!-- Service Card 1 -->
-            <div
-              class="bg-gray-50 p-8 rounded-xl shadow-md hover:shadow-xl transition-shadow duration-300 fade-in-section"
-            >
-              <div
-                class="flex items-center justify-center h-12 w-12 rounded-full bg-blue-100 text-blue-600 mb-4"
-              >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  class="h-6 w-6"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                >
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
-                    d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"
-                  />
-                </svg>
-              </div>
-              <h3 class="text-xl font-bold text-gray-900 mb-2">
-                Custom Software Development
+            <div class="service-card" data-fade-in>
+              <div class="icon-wrapper"><i class="ph-light ph-code"></i></div>
+              <h3 class="text-xl font-bold text-neutral-dark mb-2">
+                Custom Software
               </h3>
-              <p class="text-gray-600">
-                Tailored software solutions designed to meet your unique
-                business challenges and goals.
+              <p class="text-neutral-dark/80">
+                Tailored applications to solve your unique business challenges.
               </p>
             </div>
             <!-- Service Card 2 -->
             <div
-              class="bg-gray-50 p-8 rounded-xl shadow-md hover:shadow-xl transition-shadow duration-300 fade-in-section"
+              class="service-card"
+              data-fade-in
               style="transition-delay: 100ms"
             >
-              <div
-                class="flex items-center justify-center h-12 w-12 rounded-full bg-blue-100 text-blue-600 mb-4"
-              >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  class="h-6 w-6"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                >
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
-                    d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9V3"
-                  />
-                </svg>
+              <div class="icon-wrapper">
+                <i class="ph-light ph-desktop-tower"></i>
               </div>
-              <h3 class="text-xl font-bold text-gray-900 mb-2">
-                Web Application Development
+              <h3 class="text-xl font-bold text-neutral-dark mb-2">
+                Web Applications
               </h3>
-              <p class="text-gray-600">
-                Powerful, scalable, and secure web applications that deliver
-                seamless user experiences.
+              <p class="text-neutral-dark/80">
+                Powerful and scalable web apps with seamless user experiences.
               </p>
             </div>
             <!-- Service Card 3 -->
             <div
-              class="bg-gray-50 p-8 rounded-xl shadow-md hover:shadow-xl transition-shadow duration-300 fade-in-section"
+              class="service-card"
+              data-fade-in
               style="transition-delay: 200ms"
             >
-              <div
-                class="flex items-center justify-center h-12 w-12 rounded-full bg-blue-100 text-blue-600 mb-4"
-              >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  class="h-6 w-6"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                >
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
-                    d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z"
-                  />
-                </svg>
+              <div class="icon-wrapper">
+                <i class="ph-light ph-device-mobile"></i>
               </div>
-              <h3 class="text-xl font-bold text-gray-900 mb-2">
-                Mobile App Development
+              <h3 class="text-xl font-bold text-neutral-dark mb-2">
+                Mobile Apps
               </h3>
-              <p class="text-gray-600">
-                Engaging and intuitive iOS and Android apps that connect you
-                with your customers on the go.
+              <p class="text-neutral-dark/80">
+                Engaging iOS and Android apps to connect with your customers.
               </p>
             </div>
             <!-- Service Card 4 -->
             <div
-              class="bg-gray-50 p-8 rounded-xl shadow-md hover:shadow-xl transition-shadow duration-300 fade-in-section"
+              class="service-card"
+              data-fade-in
               style="transition-delay: 300ms"
             >
-              <div
-                class="flex items-center justify-center h-12 w-12 rounded-full bg-blue-100 text-blue-600 mb-4"
-              >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  class="h-6 w-6"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                >
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
-                    d="M9 17v-2a4 4 0 014-4h4M7 7h.01M7 11h.01M7 15h.01"
-                  />
-                </svg>
+              <div class="icon-wrapper">
+                <i class="ph-light ph-paint-brush"></i>
               </div>
-              <h3 class="text-xl font-bold text-gray-900 mb-2">IT Consulting</h3>
-              <p class="text-gray-600">
-                Expert advice and strategic guidance to help you plan, implement,
-                and optimize your software solutions for maximum business impact.
-              </p>
-            </div>
-            <!-- Service Card 5 -->
-            <div
-              class="bg-gray-50 p-8 rounded-xl shadow-md hover:shadow-xl transition-shadow duration-300 fade-in-section"
-              style="transition-delay: 400ms"
-            >
-              <div
-                class="flex items-center justify-center h-12 w-12 rounded-full bg-blue-100 text-blue-600 mb-4"
-              >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  class="h-6 w-6"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                >
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
-                    d="M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 10-9.78 2.096A4.001 4.001 0 003 15z"
-                  />
-                </svg>
-              </div>
-              <h3 class="text-xl font-bold text-gray-900 mb-2">
-                Cloud Solutions
+              <h3 class="text-xl font-bold text-neutral-dark mb-2">
+                UI/UX Design
               </h3>
-              <p class="text-gray-600">
-                Leveraging cloud infrastructure to build scalable, resilient,
-                and cost-effective applications.
-              </p>
-            </div>
-            <!-- Service Card 6 -->
-            <div
-              class="bg-gray-50 p-8 rounded-xl shadow-md hover:shadow-xl transition-shadow duration-300 fade-in-section"
-              style="transition-delay: 500ms"
-            >
-              <div
-                class="flex items-center justify-center h-12 w-12 rounded-full bg-blue-100 text-blue-600 mb-4"
-              >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  class="h-6 w-6"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                >
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
-                    d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
-                  />
-                </svg>
-              </div>
-              <h3 class="text-xl font-bold text-gray-900 mb-2">QA & Testing</h3>
-              <p class="text-gray-600">
-                Ensuring your software is robust, reliable, and secure through
-                rigorous quality assurance.
+              <p class="text-neutral-dark/80">
+                Creating intuitive and beautiful interfaces that users love.
               </p>
             </div>
           </div>
         </div>
       </section>
 
-      <!-- About Us Section -->
-      <section id="about" class="py-20 bg-gray-50">
+      <!-- Our Process Section -->
+      <section id="process" class="py-24 bg-neutral-gray">
         <div class="container mx-auto px-6">
-          <div
-            class="flex flex-col md:flex-row items-center gap-12 fade-in-section"
-          >
-            <div class="md:w-1/2">
-              <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-                Driven by Quality, Defined by Innovation
-              </h2>
-              <p class="text-gray-600 mb-4">
-                At Meral Software Solutions, quality isn't just a buzzword—it's
-                the foundation of everything we do. We are a team of passionate
-                developers, designers, and strategists dedicated to pushing the
-                boundaries of technology.
-              </p>
-              <p class="text-gray-600 mb-6">
-                Our mission is to translate your vision into exceptional digital
-                products that not only meet but exceed expectations. We believe
-                in building long-term partnerships, grounded in transparency,
-                collaboration, and a shared commitment to success.
-              </p>
-              <a
-                href="#contact"
-                class="bg-transparent border-2 border-blue-600 text-blue-600 hover:bg-blue-600 hover:text-white font-semibold py-3 px-8 rounded-lg transition-colors duration-300"
-              >
-                Let's Talk
-              </a>
-            </div>
-            <div class="md:w-1/2 flex justify-center">
-              <!-- IMPORTANT: Replace this placeholder with the actual path to your logo image -->
-              <img
-                src="store/logo.png"
-                alt="Meral Logo Illustration"
-                class="w-2/3 md:w-full max-w-sm"
-              />
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- Portfolio Section -->
-      <section id="portfolio" class="py-20 bg-white">
-        <div class="container mx-auto px-6">
-          <div class="text-center mb-12 fade-in-section">
-            <h2 class="text-3xl md:text-4xl font-bold text-gray-900">
-              Our Work
+          <div class="text-center mb-16">
+            <h2 class="text-3xl md:text-4xl font-bold text-neutral-dark">
+              A Blueprint for Success
             </h2>
-            <p class="text-lg text-blue-800 mt-2">
-              A glimpse into the solutions we've delivered.
+            <p class="text-lg text-primary-blue mt-2">
+              Our streamlined process ensures clarity, efficiency, and
+              outstanding results.
             </p>
           </div>
-          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <!-- Portfolio Item 1 -->
-            <div
-              class="group relative overflow-hidden rounded-lg shadow-lg fade-in-section"
-            >
-              <img
-                src="https://placehold.co/600x400/e5e7eb/1f2937?text=Project+Alpha"
-                alt="Project Alpha"
-                class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-              />
-              <div
-                class="absolute inset-0 bg-gray-900/70 flex flex-col justify-end p-6 opacity-0 group-hover:opacity-100 transition-opacity duration-500"
-              >
-                <h3 class="text-xl font-bold text-white">
-                  Fintech SaaS Platform
-                </h3>
-                <p class="text-blue-300">Web Application</p>
+          <div class="relative">
+            <!-- The connecting line -->
+            <div class="process-line"></div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+              <!-- Process Step 1 -->
+              <div class="process-step" data-fade-in-up>
+                <div class="process-icon">
+                  <i class="ph-light ph-magnifying-glass"></i>
+                </div>
+                <div class="font-bold text-xl mb-2">01. Discover</div>
+                <p class="text-neutral-dark/80">
+                  We start by understanding your vision, goals, and technical
+                  requirements.
+                </p>
               </div>
-            </div>
-            <!-- Portfolio Item 2 -->
-            <div
-              class="group relative overflow-hidden rounded-lg shadow-lg fade-in-section"
-              style="transition-delay: 100ms"
-            >
-              <img
-                src="https://placehold.co/600x400/e5e7eb/1f2937?text=Project+Beta"
-                alt="Project Beta"
-                class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-              />
+              <!-- Process Step 2 -->
               <div
-                class="absolute inset-0 bg-gray-900/70 flex flex-col justify-end p-6 opacity-0 group-hover:opacity-100 transition-opacity duration-500"
+                class="process-step"
+                data-fade-in-up
+                style="transition-delay: 150ms"
               >
-                <h3 class="text-xl font-bold text-white">
-                  E-Commerce Mobile App
-                </h3>
-                <p class="text-blue-300">iOS & Android</p>
+                <div class="process-icon">
+                  <i class="ph-light ph-pencil-ruler"></i>
+                </div>
+                <div class="font-bold text-xl mb-2">02. Design</div>
+                <p class="text-neutral-dark/80">
+                  We create wireframes, mockups, and prototypes for a
+                  user-centric design.
+                </p>
               </div>
-            </div>
-            <!-- Portfolio Item 3 -->
-            <div
-              class="group relative overflow-hidden rounded-lg shadow-lg fade-in-section"
-              style="transition-delay: 200ms"
-            >
-              <img
-                src="https://placehold.co/600x400/e5e7eb/1f2937?text=Project+Gamma"
-                alt="Project Gamma"
-                class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-              />
+              <!-- Process Step 3 -->
               <div
-                class="absolute inset-0 bg-gray-900/70 flex flex-col justify-end p-6 opacity-0 group-hover:opacity-100 transition-opacity duration-500"
+                class="process-step"
+                data-fade-in-up
+                style="transition-delay: 300ms"
               >
-                <h3 class="text-xl font-bold text-white">
-                  Real Estate Analytics Dashboard
-                </h3>
-                <p class="text-blue-300">Data Visualization</p>
+                <div class="process-icon">
+                  <i class="ph-light ph-gear-six"></i>
+                </div>
+                <div class="font-bold text-xl mb-2">03. Develop</div>
+                <p class="text-neutral-dark/80">
+                  Our expert developers write clean, efficient, and scalable
+                  code.
+                </p>
+              </div>
+              <!-- Process Step 4 -->
+              <div
+                class="process-step"
+                data-fade-in-up
+                style="transition-delay: 450ms"
+              >
+                <div class="process-icon">
+                  <i class="ph-light ph-rocket-launch"></i>
+                </div>
+                <div class="font-bold text-xl mb-2">04. Deploy</div>
+                <p class="text-neutral-dark/80">
+                  We handle the launch and provide ongoing support to ensure
+                  success.
+                </p>
               </div>
             </div>
           </div>
+        </div>
+      </section>
+
+      <section id="why-us" class="py-24 bg-white">
+        <div class="container mx-auto px-6">
+          <div class="flex flex-col lg:flex-row items-center gap-12 lg:gap-20">
+            <div class="lg:w-1/2" data-fade-in="left">
+              <h2 class="text-3xl md:text-4xl font-bold text-neutral-dark mb-4">
+                Your Vision, Engineered.
+              </h2>
+              <p class="text-neutral-dark/80 mb-8 leading-relaxed">
+                We're more than just coders; we're architects of digital
+                solutions. We combine cutting-edge technology with a
+                client-centric approach to ensure your project is a success from
+                start to finish.
+              </p>
+              <div class="space-y-6">
+                <div class="flex items-start space-x-4">
+                  <i
+                    class="ph-fill ph-check-circle text-primary-green text-2xl mt-1"
+                  ></i>
+                  <div>
+                    <h4 class="font-bold text-neutral-dark">
+                      Agile & Transparent
+                    </h4>
+                    <p class="text-neutral-dark/80">
+                      We keep you in the loop with a flexible, iterative process
+                      and clear communication.
+                    </p>
+                  </div>
+                </div>
+                <div class="flex items-start space-x-4">
+                  <i
+                    class="ph-fill ph-check-circle text-primary-green text-2xl mt-1"
+                  ></i>
+                  <div>
+                    <h4 class="font-bold text-neutral-dark">
+                      Quality & Security First
+                    </h4>
+                    <p class="text-neutral-dark/80">
+                      Our code is clean, robust, and built on a foundation of
+                      industry-best security practices.
+                    </p>
+                  </div>
+                </div>
+                <div class="flex items-start space-x-4">
+                  <i
+                    class="ph-fill ph-check-circle text-primary-green text-2xl mt-1"
+                  ></i>
+                  <div>
+                    <h4 class="font-bold text-neutral-dark">
+                      Dedicated Support
+                    </h4>
+                    <p class="text-neutral-dark/80">
+                      We're your long-term partner, providing support and
+                      maintenance post-launch.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div
+              class="lg:w-1/2 flex justify-center items-center"
+              data-fade-in="right"
+            >
+              <div class="relative w-full max-w-md">
+                <div
+                  class="absolute -top-8 -left-8 w-32 h-32 bg-primary-blue/10 rounded-full"
+                ></div>
+                <div
+                  class="absolute -bottom-8 -right-8 w-32 h-32 bg-primary-green/10 rounded-full"
+                ></div>
+                <img
+                  src="./store/logo.png"
+                  alt="Meral Logo Illustration"
+                  class="relative z-10 w-full h-auto"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Meet the Team Section -->
+      <section id="team" class="py-24 bg-white">
+        <div class="container mx-auto px-6">
+          <div class="text-center mb-16">
+            <h2 class="text-3xl md:text-4xl font-bold text-neutral-dark">
+              Meet Our Founders
+            </h2>
+            <p class="text-lg text-primary-blue mt-2">
+              The minds behind the mission.
+            </p>
+          </div>
+          <div
+            class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-12"
+          >
+            <!-- Founder Card 1 -->
+            <div class="team-card" data-fade-in-up>
+              <img
+                src="https://placehold.co/400x400/F0F2F5/1A1A1A?text=AT"
+                alt="Founder Abrahim Toutoungi"
+                class="team-card-img"
+              />
+              <h3 class="text-xl font-bold mt-4">Abrahim Toutoungi</h3>
+              <p class="text-primary-blue">Co-Founder</p>
+              <p class="text-neutral-dark/70 mt-2 text-sm">
+                Visionary leader with a passion for building scalable and
+                impactful technology.
+              </p>
+              <div class="team-card-socials">
+                <a
+                  href="https://www.linkedin.com/in/atoutoungi/"
+                  aria-label="LinkedIn"
+                  target="_blank"
+                  ><i class="ph ph-linkedin-logo"></i
+                ></a>
+                <a
+                  href="https://github.com/abrahimt"
+                  aria-label="GitHub"
+                  target="_blank"
+                  ><i class="ph ph-github-logo"></i
+                ></a>
+              </div>
+            </div>
+            <!-- Founder Card 2 -->
+            <div
+              class="team-card"
+              data-fade-in-up
+              style="transition-delay: 150ms"
+            >
+              <img
+                src="https://placehold.co/400x400/E0F2FE/1A1A1A?text=CH"
+                alt="Founder Cooper Hanson"
+                class="team-card-img"
+              />
+              <h3 class="text-xl font-bold mt-4">Cooper Hanson</h3>
+              <p class="text-primary-blue">Co-Founder</p>
+              <p class="text-neutral-dark/70 mt-2 text-sm">
+                Expert architect of robust systems and elegant code, driving our
+                technical excellence.
+              </p>
+              <div class="team-card-socials">
+                <a
+                  href="https://www.linkedin.com/in/cooper-hanson-dev/"
+                  aria-label="LinkedIn"
+                  target="_blank"
+                  ><i class="ph ph-linkedin-logo"></i
+                ></a>
+                <a
+                  href="https://github.com/chanson02"
+                  aria-label="GitHub"
+                  target="_blank"
+                  ><i class="ph ph-github-logo"></i
+                ></a>
+              </div>
+            </div>
+            <!-- Founder Card 3 -->
+            <!-- <div
+              class="team-card"
+              data-fade-in-up
+              style="transition-delay: 300ms"
+            >
+              <img
+                src="https://placehold.co/400x400/DBEAFE/1A1A1A?text=DC"
+                alt="Founder David Chen"
+                class="team-card-img"
+              />
+              <h3 class="text-xl font-bold mt-4">David Chen</h3>
+              <p class="text-primary-blue">Head of Product & Design</p>
+              <p class="text-neutral-dark/70 mt-2 text-sm">
+                Champion of user-centric design, translating complex ideas into
+                intuitive experiences.
+              </p>
+              <div class="team-card-socials">
+                <a href="#" aria-label="LinkedIn"
+                  ><i class="ph ph-linkedin-logo"></i
+                ></a>
+                <a href="#" aria-label="Dribbble"
+                  ><i class="ph ph-dribbble-logo"></i
+                ></a>
+              </div>
+            </div> -->
+          </div>
+        </div>
+      </section>
+
+      <!-- CTA Section -->
+      <section class="bg-primary-blue">
+        <div class="container mx-auto px-6 py-16 text-center">
+          <h2 class="text-3xl font-bold text-black">Have a project in mind?</h2>
+          <p class="text-black/80 mt-2 mb-8 max-w-2xl mx-auto">
+            Don't wait to bring your ideas to life. Let's connect and discuss
+            how we can build something amazing together.
+          </p>
+          <a href="#contact" class="btn btn-secondary text-lg"
+            >Let's Get Started</a
+          >
         </div>
       </section>
 
       <!-- Contact Section -->
-      <section id="contact" class="py-20 bg-gray-50">
+      <section id="contact" class="py-24 bg-[#1a1a1a] text-white">
         <div class="container mx-auto px-6">
-          <div class="text-center mb-12 fade-in-section">
-            <h2 class="text-3xl md:text-4xl font-bold text-gray-900">
-              Let's Build Something Amazing
-            </h2>
-            <p class="text-lg text-blue-800 mt-2">
-              Have a project in mind? We'd love to hear about it.
-            </p>
-          </div>
-          <div class="max-w-3xl mx-auto fade-in-section">
-            <form id="contactForm" class="space-y-6">
-              <div>
-                <label for="name" class="sr-only">Full Name</label>
-                <input
-                  type="text"
-                  name="name"
-                  id="name"
-                  autocomplete="name"
-                  required
-                  class="w-full bg-white border border-gray-300 rounded-lg py-3 px-4 text-gray-800 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500"
-                  placeholder="Full Name"
-                />
-              </div>
-              <div>
-                <label for="email" class="sr-only">Email Address</label>
-                <input
-                  type="email"
-                  name="email"
-                  id="email"
-                  autocomplete="email"
-                  required
-                  class="w-full bg-white border border-gray-300 rounded-lg py-3 px-4 text-gray-800 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500"
-                  placeholder="Email Address"
-                />
-              </div>
-              <div>
-                <label for="message" class="sr-only">Message</label>
-                <textarea
-                  name="message"
-                  id="message"
-                  rows="5"
-                  required
-                  class="w-full bg-white border border-gray-300 rounded-lg py-3 px-4 text-gray-800 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500"
-                  placeholder="Tell us about your project..."
-                ></textarea>
-              </div>
-              <div class="text-center">
-                <button
-                  type="submit"
-                  class="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-12 rounded-lg shadow-lg transition-transform transform hover:scale-105 duration-300"
+          <div class="grid lg:grid-cols-2 gap-16">
+            <!-- Contact Info Column -->
+            <div data-fade-in="left">
+              <h2 class="text-3xl md:text-4xl font-bold">
+                Have a project in mind?
+              </h2>
+              <h2 class="text-3xl md:text-4xl font-bold">Let's Connect!</h2>
+              <p class="text-white/70 mt-4 mb-8">
+                Don't wait to bring your ideas to life. Let's connect and
+                discuss how we can build something amazing together.
+              </p>
+              <div class="space-y-4">
+                <a
+                  href="mailto:info@meralsoft.com"
+                  class="flex items-center space-x-3 group"
                 >
-                  Send Message
-                </button>
+                  <i
+                    class="ph-fill ph-envelope-simple text-2xl text-primary-blue"
+                  ></i>
+                  <span class="text-lg group-hover:underline"
+                    >info@meralsoft.com</span
+                  >
+                </a>
               </div>
-            </form>
+            </div>
+            <!-- Contact Form Column -->
+            <div data-fade-in="right">
+              <form id="contactForm" class="space-y-6">
+                <div>
+                  <label for="name" class="sr-only">Full Name</label>
+                  <input
+                    type="text"
+                    name="name"
+                    id="name"
+                    autocomplete="name"
+                    required
+                    class="form-input-dark"
+                    placeholder="Full Name"
+                  />
+                </div>
+                <div>
+                  <label for="email" class="sr-only">Email Address</label>
+                  <input
+                    type="email"
+                    name="email"
+                    id="email"
+                    autocomplete="email"
+                    required
+                    class="form-input-dark"
+                    placeholder="Email Address"
+                  />
+                </div>
+                <div>
+                  <label for="message" class="sr-only">Message</label>
+                  <textarea
+                    name="message"
+                    id="message"
+                    rows="5"
+                    required
+                    class="form-input-dark"
+                    placeholder="Tell us about your project..."
+                  ></textarea>
+                </div>
+                <div class="text-right">
+                  <button type="submit" class="btn btn-primary btn-lg">
+                    Send Message
+                  </button>
+                </div>
+              </form>
+            </div>
           </div>
         </div>
       </section>
     </main>
 
     <!-- Footer -->
-    <footer class="bg-gray-100 border-t border-gray-200">
-      <div class="container mx-auto px-6 py-8">
-        <div class="flex flex-col md:flex-row justify-between items-center">
-          <div class="text-center md:text-left mb-6 md:mb-0">
-            <p class="text-sm text-gray-500">
-              &copy; 2025 Meral Software Solutions. All Rights Reserved.
-            </p>
-          </div>
-          <div class="flex space-x-6"></div>
-        </div>
+    <footer class="bg-neutral-dark border-t border-white/10">
+      <div class="container mx-auto px-6 py-6 text-center">
+        <p class="text-sm text-black/50">
+          &copy; 2025 Meral Software Solutions. All Rights Reserved.
+        </p>
       </div>
     </footer>
 
     <!-- Notification Element -->
     <div
       id="notification"
-      class="fixed bottom-5 right-5 bg-white p-4 rounded-lg shadow-lg opacity-0 transform translate-y-2 pointer-events-none"
+      class="fixed bottom-5 right-5 z-50 bg-white p-4 rounded-lg shadow-lg opacity-0 transform translate-y-2 pointer-events-none"
     >
-      <p id="notification-message" class="text-gray-800"></p>
+      <p id="notification-message" class="text-neutral-dark"></p>
     </div>
 
     <script>
+      // --- Hero Canvas Animation ---
+      const canvas = document.getElementById("hero-canvas");
+      const ctx = canvas.getContext("2d");
+      let particles = [];
+
+      function resizeCanvas() {
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+      }
+
+      class Particle {
+        constructor() {
+          this.x = Math.random() * canvas.width;
+          this.y = Math.random() * canvas.height;
+          this.size = Math.random() * 2 + 1;
+          this.speedX = Math.random() * 1 - 0.5;
+          this.speedY = Math.random() * 1 - 0.5;
+          this.color = Math.random() > 0.5 ? "#0A4DCC" : "#2EBD59";
+        }
+        update() {
+          this.x += this.speedX;
+          this.y += this.speedY;
+
+          if (this.size > 0.2) this.size -= 0.01;
+          if (this.x < 0 || this.x > canvas.width) this.speedX *= -1;
+          if (this.y < 0 || this.y > canvas.height) this.speedY *= -1;
+        }
+        draw() {
+          ctx.fillStyle = this.color;
+          ctx.beginPath();
+          ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+          ctx.fill();
+        }
+      }
+
+      function initParticles() {
+        particles = [];
+        let numberOfParticles = (canvas.width * canvas.height) / 9000;
+        for (let i = 0; i < numberOfParticles; i++) {
+          particles.push(new Particle());
+        }
+      }
+
+      function animateParticles() {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        for (let i = 0; i < particles.length; i++) {
+          particles[i].update();
+          particles[i].draw();
+        }
+        connectParticles();
+        requestAnimationFrame(animateParticles);
+      }
+
+      function connectParticles() {
+        let opacityValue = 1;
+        for (let a = 0; a < particles.length; a++) {
+          for (let b = a; b < particles.length; b++) {
+            let distance = Math.sqrt(
+              Math.pow(particles[a].x - particles[b].x, 2) +
+                Math.pow(particles[a].y - particles[b].y, 2)
+            );
+            if (distance < 100) {
+              opacityValue = 1 - distance / 100;
+              ctx.strokeStyle = `rgba(10, 77, 204, ${opacityValue})`;
+              ctx.lineWidth = 0.5;
+              ctx.beginPath();
+              ctx.moveTo(particles[a].x, particles[a].y);
+              ctx.lineTo(particles[b].x, particles[b].y);
+              ctx.stroke();
+            }
+          }
+        }
+      }
+
+      window.addEventListener("resize", () => {
+        resizeCanvas();
+        initParticles();
+      });
+
+      // Initial setup
+      resizeCanvas();
+      initParticles();
+      animateParticles();
+
       // --- Notification System ---
       const notification = document.getElementById("notification");
       const notificationMessage = document.getElementById(
@@ -672,26 +659,19 @@
       let notificationTimeout;
 
       function showNotification(message, isError = false) {
-        // Clear any existing timeout
         clearTimeout(notificationTimeout);
-
-        // Set message and style
         notificationMessage.textContent = message;
         notification.classList.remove(
           "bg-red-500",
-          "bg-green-500",
+          "bg-primary-green",
           "text-white"
         );
         if (isError) {
           notification.classList.add("bg-red-500", "text-white");
         } else {
-          notification.classList.add("bg-green-500", "text-white");
+          notification.classList.add("bg-primary-green", "text-white");
         }
-
-        // Make it visible
         notification.classList.remove("opacity-0", "translate-y-2");
-
-        // Set a timeout to hide it after 5 seconds
         notificationTimeout = setTimeout(() => {
           notification.classList.add("opacity-0", "translate-y-2");
         }, 5000);
@@ -699,16 +679,10 @@
 
       // --- Contact Form Submission ---
       const contactForm = document.getElementById("contactForm");
-      contactForm.addEventListener("submit", contactSubmit);
-
-      async function contactSubmit(event) {
+      contactForm.addEventListener("submit", async (event) => {
         event.preventDefault();
-
         const formData = new FormData(event.target);
-        const data = {};
-        for (const [key, value] of formData.entries()) {
-          data[key] = value;
-        }
+        const data = Object.fromEntries(formData.entries());
         const webhook =
           "https://discord.com/api/webhooks/1390059235668398102/pfeAm-4f8bf9Ewrl3GsByrS3rgHlq3L2XsUh5sPAUxKFYk_X7P3OOG0GZdPM6HVWl8kp";
         const payload = {
@@ -716,12 +690,19 @@
             "<@213418183619641355> <@712644187455225877> <@450784689981095958>\n_ _",
           embeds: [
             {
-              title: data.email,
+              title: `New Inquiry from ${data.name}`,
               description: data.message,
-              color: 3447003,
+              color: 1092556, // Corresponds to #0A4DCC
+              fields: [
+                {
+                  name: "Email",
+                  value: data.email,
+                  inline: true,
+                },
+              ],
             },
           ],
-          username: data.name,
+          username: "Meral Website Bot",
         };
 
         try {
@@ -730,42 +711,51 @@
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify(payload),
           });
-
           if (response.ok) {
             showNotification("Message sent successfully. We will be in touch!");
             event.target.reset();
           } else {
             const errText = await response.text();
-            showNotification(`Failed to send message. Error: ${errText}`, true);
+            showNotification(`Failed to send message. Please try again.`, true);
           }
         } catch (error) {
-          showNotification(`An error occurred: ${error}`, true);
+          showNotification(`An error occurred. Please try again.`, true);
         }
-      }
+      });
 
       // --- Mobile Menu Toggle ---
       const mobileMenuButton = document.getElementById("mobile-menu-button");
       const mobileMenu = document.getElementById("mobile-menu");
+      const navLinks = document.querySelectorAll(".mobile-nav-link, .nav-link");
 
       mobileMenuButton.addEventListener("click", () => {
         mobileMenu.classList.toggle("hidden");
       });
 
-      // --- Smooth Scrolling & Menu Close ---
-      document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
-        anchor.addEventListener("click", function (e) {
-          e.preventDefault();
-
-          // Close mobile menu if it's open
+      navLinks.forEach((link) => {
+        link.addEventListener("click", () => {
           if (!mobileMenu.classList.contains("hidden")) {
             mobileMenu.classList.add("hidden");
           }
+        });
+      });
 
+      // --- Smooth Scrolling ---
+      document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+        anchor.addEventListener("click", function (e) {
+          e.preventDefault();
           const targetElement = document.querySelector(
             this.getAttribute("href")
           );
           if (targetElement) {
-            targetElement.scrollIntoView({
+            // Adjust for header height
+            const headerOffset = document.getElementById("header").offsetHeight;
+            const elementPosition = targetElement.getBoundingClientRect().top;
+            const offsetPosition =
+              elementPosition + window.pageYOffset - headerOffset;
+
+            window.scrollTo({
+              top: offsetPosition,
               behavior: "smooth",
             });
           }
@@ -773,23 +763,22 @@
       });
 
       // --- Fade-in Animations on Scroll ---
-      const sections = document.querySelectorAll(".fade-in-section");
+      const fadeElements = document.querySelectorAll(
+        "[data-fade-in], [data-fade-in-up], [data-fade-in-left], [data-fade-in-right]"
+      );
       const observer = new IntersectionObserver(
         (entries) => {
           entries.forEach((entry) => {
             if (entry.isIntersecting) {
               entry.target.classList.add("is-visible");
+              observer.unobserve(entry.target);
             }
           });
         },
-        {
-          threshold: 0.1,
-        }
+        { threshold: 0.15 }
       );
 
-      sections.forEach((section) => {
-        observer.observe(section);
-      });
+      fadeElements.forEach((el) => observer.observe(el));
     </script>
   </body>
 </html>
