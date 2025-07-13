@@ -105,10 +105,7 @@ h6 {
   transition: all 0.3s ease;
   transform: translateY(0);
   text-align: center;
-  border: 2px solid transparent;
-  position: relative;
-  overflow: hidden;
-  z-index: 1;
+  border: none;
 }
 
 .btn:hover {
@@ -129,7 +126,7 @@ h6 {
 .btn-secondary {
   background-color: transparent;
   color: var(--primary-blue);
-  border-color: var(--neutral-border);
+  border: 2px solid var(--neutral-border);
 }
 
 .btn-secondary:hover {

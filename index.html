@@ -238,7 +238,7 @@
         <!-- Contact Section -->
         <section id="contact" class="py-24 bg-neutral-dark-section text-white">
             <div class="container mx-auto px-6">
-                <div class="grid lg:grid-cols-2 gap-16 items-center">
+                <div class="grid lg:grid-cols-2 gap-16">
                     <div data-fade-in="left">
                         <h2 class="text-3xl md:text-4xl font-bold">Have a project in mind?</h2>
                         <h2 class="text-3xl md:text-4xl font-bold text-gradient">Let's Connect!</h2>
@@ -388,6 +388,21 @@
             }, 5000);
         }
 
+        function showConfirmationNotification(name) {
+            clearTimeout(notificationTimeout);
+            notificationMessage.innerHTML = `
+                <div class="space-y-2">
+                    <p class="font-semibold">Message sent successfully!</p>
+                    <p class="text-sm">Hi ${name}, we'll be in touch soon.</p>
+                </div>
+            `;
+            notification.className = 'fixed bottom-5 right-5 z-50 p-4 rounded-lg shadow-lg text-white bg-green-600'; // Reset classes
+            notification.classList.remove("opacity-0", "translate-y-2");
+            notificationTimeout = setTimeout(() => {
+                notification.classList.add("opacity-0", "translate-y-2");
+            }, 8000); // Longer timeout for confirmation
+        }
+
         // --- Contact Form Submission ---
         const contactForm = document.getElementById("contactForm");
         contactForm.addEventListener("submit", async (event) => {
@@ -414,7 +429,7 @@
                     body: JSON.stringify(payload),
                 });
                 if (response.ok) {
-                    showNotification("Message sent! We'll be in touch soon.");
+                    showConfirmationNotification(data.name);
                     event.target.reset();
                 } else {
                     showNotification(`Failed to send message. Please try again.`, true);
